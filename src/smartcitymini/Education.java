@@ -1,14 +1,9 @@
 package smartcitymini;
 
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,31 +14,28 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Education extends JFrame {
-	
 	private JPanel contentPane;
 	JLabel back ;
 	JButton goback;
-	
 	public Education(String s1, String s2, String s3, String s4, String c1, String c2, String u1, String u2, String u3, String si1, String si2, String si3, String si4, String ci1, String ci2, String ui1, String ui2, String ui3, String cityname) {
 		
 
+		System.out.println("test2");
 		contentPane = new JPanel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1500, 800);
 		setVisible(true);
 		setContentPane(contentPane);
-
+		JLabel title = new JLabel("EDUCATION");
 		contentPane.setLayout(null);
 		back= new JLabel("");
 		back.setBounds(0, 0, 1500, 750 );
 		contentPane.add(back);
-
+		back.add(title);
 		
-		JLabel title = new JLabel("EDUCATION");
 		title.setFont(new Font("Tahoma", Font.BOLD, 18));
 		title.setForeground(Color.WHITE);
 		title.setBounds(10, 10, 200, 40);
-		back.add(title);
 		
 		goback= new JButton("BACK");
 		goback.setFont(new Font("Dialog", Font.ITALIC, 15));
@@ -54,24 +46,28 @@ public class Education extends JFrame {
 		goback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cityname == "Bangalore") {
-					Bangalore b=new Bangalore(); 
+					Bangalore b=new Bangalore("Student"); //Hardcoded
 					 b.Slideshow();
 					 b.show();
+					 setVisible(false);
 				}
 				if(cityname == "Hyderabad") {
 					Hyderabad h = new Hyderabad();
 					h.Slideshow();
 					h.show();
+					setVisible(false);
 				}
 				if(cityname == "Chennai") {
 					Chennai c = new Chennai();
 					c.Slideshow();
 					c.show();
+					setVisible(false);
 				}
 				if(cityname == "Mangalore") {
 					Mangalore m = new Mangalore();
 					m.Slideshow();
 					m.show();
+					setVisible(false);
 				}
 			}
 		});
@@ -187,7 +183,6 @@ public class Education extends JFrame {
 		uImg3.setBounds(1096, 426, 200, 150);
 		SetImageSize(uImg3, new ImageIcon(ui3));
 		back.add(uImg3);
-		
 		Imageshow is = new Imageshow() {};
         
         is.SetImageSizeCity(back);
