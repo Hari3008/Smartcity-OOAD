@@ -1,204 +1,32 @@
 package smartcitymini;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+public class EducationChennai {
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.border.EmptyBorder;
-
-public class EducationChennai extends JFrame {
-
-	private JPanel contentPane;
-	JLabel back ;
-	JButton goback;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EducationChennai frame = new EducationChennai();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public EducationChennai() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1500, 800);
-		contentPane = new JPanel();
-		//JScrollPane scrPane = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-		  //       JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		//getContentPane().add(scrPane);
-		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
-		contentPane.setBackground(Color.BLACK);
-		//back= new JLabel("");
-		//back.setIcon(new ImageIcon("C:\\Users\\Prajwala\\Desktop\\java\\a-images for smartcity\\bg13.jpg"));
-		//back.setBounds(0, 0, 1500, 800);
-		//contentPane.add(back);
-		JLabel title = new JLabel("EDUCATION");
-		contentPane.add(title);
-		title.setFont(new Font("Tahoma", Font.BOLD, 18));
-		title.setForeground(Color.WHITE);
-		title.setBounds(10, 10, 200, 40);
 		
-		goback= new JButton("BACK");
-		goback.setFont(new Font("Dialog", Font.ITALIC, 15));
-		goback.setForeground(Color.WHITE);
-		goback.setBackground(Color.BLACK);
-		//ptv.setMargin(new Insets(10,10,10,10));
-		//ptv.setBorder(thickBorder);
-		goback.setBounds(1150, 0, 200, 34);
-		contentPane.add(goback);
-		goback.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Chennai b=new Chennai();
-				 b.Slideshow();
-				b.show();
-			}
-		});
-		/*JLabel schools = new JLabel("SCHOOLS");
-		schools.setFont(new Font("Tahoma", Font.ITALIC, 14));
-		contentPane.add(schools);
-		//title.setFont(new Font("Tahoma", 12));
-		schools.setForeground(Color.WHITE);
-		schools.setBounds(10, 61, 200, 40);*/
+		String s1 = "Sishya School Chennai";
+		String s2 = "Vivekananda Vidyalaya";
+		String s3 = "Chettinad Hari Shree Vidyalayam";
+		String s4 = "DAV Boys Senior Secondary School Chennai";
+		String simg1 = ".//img//Chennai//edu-SishyaSchoolChennai.jpg";
+		String simg2 = ".//img//Chennai//edu-VivekanandaVidyalaya.jpg";
+		String simg3 = ".//img//Chennai//edu-ChettinadHariShreeVidyalayam.png";
+		String simg4 = ".//img//Chennai//edu-DAVBoysSeniorSecondarySchoolChennai.jpg";
+		String c1 = "Madras Medical College";
+		String c2 = "Madras Christian College";
+		String u1 = "Indian Institute Of Teuhnology–Madras (IIT–Madras)";
+		String u2 = "University of Madras";
+		String u3 = "Anna University";
+		String cimg1 = ".//img//Chennai//edu-MadrasMedicalCollege.png";
+		String cimg2 = ".//img//Chennai//edu-MadrasChristianCollege.png";
+		String uimg1 = ".//img//Chennai//edu-IITMadras.jpg";
+		String uimg2 = ".//img//Chennai//edu-UniversityofMadras.jpg";
+		String uimg3 = ".//img//Chennai//edu-AnnaUniversity.jpg";
 		
-		JLabel bc = new JLabel("");
-		//lalbagh.setIcon(new ImageIcon("C:\\Users\\Prajwala\\Desktop\\java\\Bangalore\\lalbagh.jpg"));
-		bc.setBounds(10, 151, 200, 150);
-		SetImageSize(bc,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\IIT_Madras.jpg"));
-		contentPane.add(bc); 
+		String cityname = "Chennai";
 		
-		JLabel lblBishopCottonBoys = new JLabel("IIT MADRAS");
-		lblBishopCottonBoys.setForeground(Color.WHITE);
-		lblBishopCottonBoys.setBounds(10, 112, 200, 37);
-		contentPane.add(lblBishopCottonBoys);
 		
-		JLabel lblIndusInternationalSchool = new JLabel("ANNA UNIVERSITY");
-		lblIndusInternationalSchool.setForeground(Color.WHITE);
-		lblIndusInternationalSchool.setBounds(277, 112, 200, 37);
-		contentPane.add(lblIndusInternationalSchool);
-		
-		JLabel label_1 = new JLabel("");
-		//label_1.setForeground(Color.WHITE);
-		label_1.setBounds(277, 151, 200, 150);
-		SetImageSize(label_1,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\Anna university.jpg"));
-		contentPane.add(label_1); 
-		
-		JLabel lblMountCarmelSchool = new JLabel("MADRAS CHRISTIAN COLLEGE");
-		lblMountCarmelSchool.setForeground(Color.WHITE);
-		lblMountCarmelSchool.setBounds(539, 112, 200, 37);
-		contentPane.add(lblMountCarmelSchool);
-		
-		JLabel label = new JLabel("");
-		label.setBounds(539, 151, 200, 150);
-		SetImageSize(label,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\Madras christian college.jpg"));
-		contentPane.add(label);
-		
-		JLabel lblSophiasHighSchool = new JLabel("SRM UNIVERSITY");
-		lblSophiasHighSchool.setForeground(Color.WHITE);
-		lblSophiasHighSchool.setBounds(789, 112, 200, 37);
-		contentPane.add(lblSophiasHighSchool);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setBounds(777, 151, 200, 150);
-		SetImageSize(label_2,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\SRM.png"));
-		contentPane.add(label_2);
-		
-		JLabel colleges = new JLabel("COLLEGES");
-		colleges.setFont(new Font("Tahoma", Font.ITALIC, 14));
-		contentPane.add(colleges);
-		//title.setFont(new Font("Tahoma", 12));
-		colleges.setForeground(Color.WHITE);
-		colleges.setBounds(10, 326, 200, 40);
-		
-		JLabel lblDeeksha = new JLabel("VELS UNIVERSITY");
-		lblDeeksha.setForeground(Color.WHITE);
-		lblDeeksha.setBounds(10, 388, 200, 37);
-		contentPane.add(lblDeeksha);
-		
-		JLabel label_4 = new JLabel("");
-		label_4.setBounds(10, 426, 200, 150);
-		SetImageSize(label_4,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\Vels University.png"));
-		contentPane.add(label_4);
-		
-		JLabel lblJain = new JLabel("UNIVERSITY OF MADRAS");
-		lblJain.setForeground(Color.WHITE);
-		lblJain.setBounds(294, 388, 200, 37);
-		contentPane.add(lblJain);
-		
-		JLabel label_5 = new JLabel("");
-		label_5.setBounds(294, 426, 200, 150);
-		SetImageSize(label_5,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\University of madras.jpg"));
-		contentPane.add(label_5);
-		
-	/*	JLabel lblUniversities = new JLabel("UNIVERSITIES");
-		lblUniversities.setForeground(Color.WHITE);
-		lblUniversities.setFont(new Font("Tahoma", Font.ITALIC, 14));
-		lblUniversities.setBounds(588, 326, 200, 40);
-		contentPane.add(lblUniversities);
-		
-		JLabel lblIisc = new JLabel("BITS Hyderabad");
-		lblIisc.setForeground(Color.WHITE);
-		lblIisc.setBounds(588, 388, 200, 37);
-		contentPane.add(lblIisc);
-		
-		JLabel label_3 = new JLabel("");
-		label_3.setBounds(588, 426, 200, 150);
-		SetImageSize(label_3,new ImageIcon("C:\\Users\\Prajwala\\Downloads\\edu-BITSHyderabad.jpg"));
-		contentPane.add(label_3);
-		
-		JLabel lblInternationalInstituteOf = new JLabel("IIIT ");
-		lblInternationalInstituteOf.setForeground(Color.WHITE);
-		lblInternationalInstituteOf.setBounds(836, 388, 95, 37);
-		contentPane.add(lblInternationalInstituteOf);
-		
-		JLabel label_6 = new JLabel("");
-		label_6.setBounds(846, 426, 200, 150);
-		SetImageSize(label_6,new ImageIcon("C:\\Users\\Prajwala\\Downloads\\edu-iiithyd.jpg"));
-		contentPane.add(label_6);
-		
-		JLabel lblBangaloreUniversity = new JLabel("OSMANIA UNIVERSITY");
-		lblBangaloreUniversity.setForeground(Color.WHITE);
-		lblBangaloreUniversity.setBounds(1096, 388, 149, 37);
-		contentPane.add(lblBangaloreUniversity);
-		
-		JLabel label_7 = new JLabel("");
-		label_7.setBounds(1096, 426, 200, 150);
-		SetImageSize(label_7,new ImageIcon("C:\\Users\\Prajwala\\Downloads\\edu-osmaniauniversity.jpg"));
-		contentPane.add(label_7);
-		*/
-	}
-	public void SetImageSize(JLabel label,ImageIcon im)
-	{
-		ImageIcon icon=im;
-		Image img=icon.getImage();
-		Image newImg=img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
-		//Image newImg=img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
-		ImageIcon newImc=new ImageIcon(newImg);
-		label.setIcon(newImc);
-		
+		Education e = new Education(s1,s2,s3,s4,c1,c2,u1,u2,u3,simg1,simg2,simg3,simg4,cimg1,cimg2,uimg1, uimg2, uimg3, cityname);
+
 	}
 }
