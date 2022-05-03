@@ -155,24 +155,16 @@ public class Places extends JFrame{
 		goback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cityname == "Bangalore") {
-					Bangalore b=new Bangalore("Tourist");
-					 b.Slideshow();
-					 b.show();
+					setVisible(false);
 				}
 				if(cityname == "Hyderabad") {
-					Hyderabad h = new Hyderabad();
-					h.Slideshow();
-					h.show();
+					setVisible(false);
 				}
 				if(cityname == "Chennai") {
-					Chennai c = new Chennai();
-					c.Slideshow();
-					c.show();
+					setVisible(false);
 				}
 				if(cityname == "Mangalore") {
-					Mangalore m = new Mangalore();
-					m.Slideshow();
-					m.show();
+					setVisible(false);
 				}
 			}
 		});

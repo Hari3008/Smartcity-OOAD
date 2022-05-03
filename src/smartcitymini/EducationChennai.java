@@ -14,7 +14,7 @@ public class EducationChennai {
 		String simg4 = ".//img//Chennai//edu-DAVBoysSeniorSecondarySchoolChennai.jpg";
 		String c1 = "Madras Medical College";
 		String c2 = "Madras Christian College";
-		String u1 = "Indian Institute Of Teuhnologyâ€“Madras (IITâ€“Madras)";
+		String u1 = "Indian Institute Of Teuhnology–Madras (IIT–Madras)";
 		String u2 = "University of Madras";
 		String u3 = "Anna University";
 		String cimg1 = ".//img//Chennai//edu-MadrasMedicalCollege.png";

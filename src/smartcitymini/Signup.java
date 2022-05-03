@@ -18,7 +18,11 @@ public class Signup extends JFrame {
 	private JTextField password;
 	private JTextField confirmpwd;
 	private JTextField home;
+	private JComboBox comboBox;
 	Connection connect=null;
+	String[] roles={
+			"JobSeeker","Student","Tourist"
+	};
 
 	/**
 	 * Launch the application.
@@ -57,6 +61,11 @@ public class Signup extends JFrame {
 		background.add(lblPassword);
 		lblPassword.setForeground(Color.WHITE);
 		lblPassword.setBounds(334, 610, 63, 14);
+		
+		JLabel Role = new JLabel("Role");
+		background.add(Role);
+		Role.setForeground(Color.WHITE);
+		Role.setBounds(334, 700, 63, 14);
 		
 		JLabel lblConfirmPassword = new JLabel("Confirm Password");
 		background.add(lblConfirmPassword);
@@ -103,49 +112,66 @@ public class Signup extends JFrame {
 		background.add(lblName);
 		lblName.setForeground(Color.WHITE);
 		lblName.setBounds(334, 550, 46, 14);
-		
+	
 		username = new JTextField();
 		background.add(username);
 		username.setBounds(465, 580, 86, 20);
 		username.setColumns(10);
+		comboBox = new JComboBox();
+	    //comboBox.setPreferredSize(new Dimension(200,130));
+	    comboBox.setBounds(465, 700, 86, 20);
+	    //comboBox.setBounds(getBounds());
+//		view.setBounds(575, 450, 200, 40);
+//	    view.setVisible(true);
+	    int count=0;
+	    for(int i = 0; i < roles.length; i++) 
+	    	comboBox.addItem(roles[count++]); 
 		JButton btnSignUp = new JButton("Sign Up!");
+		background.add(comboBox);
+		comboBox.setVisible(true);
 		btnSignUp.setBackground(Color.WHITE);
 		background.add(btnSignUp);
+		
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try
 				{
-					String query="insert into Details (Name,Username,Password,HomeTown) values (?,?,?,?)";
-					PreparedStatement pst=connect.prepareStatement(query);
-					String confirm=confirmpwd.getText() ;
-					String pass=password.getText() ;
-					if(confirm.equals(pass)){
-						
-					
-					pst.setString(1,name.getText() );
-					pst.setString(2,username.getText() );
-					pst.setString(3,password.getText() );
-					pst.setString(4,home.getText() );
-					//pst.setString(5,username.getText() );
-					pst.execute();
-					/*login_back l=new login_back();
-					l.login();*/
-					pst.close();
-					connect=null;
-					JOptionPane.showMessageDialog(null, "Registered Succesfully!");
-					
-//					Welcome w=new Welcome();
-//					w.show();
-					dispose();
-					/*login_back l=new login_back();
-					l.login();*/
-					}
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Enter the same password");
-					}
-					pst.close();
+					String role=(String)comboBox.getSelectedItem();
+                    Roles r = new Roles(name.getText(), username.getText(), password.getText(), home.getText(), role);
+                    login l = new login();
+                    l.show();
+                    setVisible(false);
+//					String query="insert into Details (Name,Username,Password,HomeTown) values (?,?,?,?)";
+//					PreparedStatement pst=connect.prepareStatement(query);
+//					String confirm=confirmpwd.getText() ;
+//					String pass=password.getText() ;
+//					if(confirm.equals(pass)){
+//						
+//					
+//					pst.setString(1,name.getText() );
+//					pst.setString(2,username.getText() );
+//					pst.setString(3,password.getText() );
+//					pst.setString(4,home.getText() );
+//					//pst.setString(5,username.getText() );
+//					pst.execute();
+//					/*login_back l=new login_back();
+//					l.login();*/
+//					pst.close();
+//					connect=null;
+//					JOptionPane.showMessageDialog(null, "Registered Succesfully!");
+//					
+////					Welcome w=new Welcome();
+////					w.show();
+//					dispose();
+//					/*login_back l=new login_back();
+//					l.login();*/
+//					}
+//					else
+//					{
+//						JOptionPane.showMessageDialog(null, "Enter the same password");
+//					}
+//					pst.close();
 					/*login_back l=new login_back();
 					l.login();*/
 					

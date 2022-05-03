@@ -1,6 +1,6 @@
 package smartcitymini;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
 
 public class Tourist {

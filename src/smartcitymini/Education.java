@@ -1,9 +1,14 @@
 package smartcitymini;
 
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,6 +28,9 @@ public class Education extends JFrame {
 		System.out.println("test2");
 		contentPane = new JPanel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+//        int width = (int)size.getWidth();
+//        int height = (int)size.getHeight();
 		setBounds(100, 100, 1500, 800);
 		setVisible(true);
 		setContentPane(contentPane);
@@ -46,27 +54,18 @@ public class Education extends JFrame {
 		goback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cityname == "Bangalore") {
-					Bangalore b=new Bangalore("Student"); //Hardcoded
-					 b.Slideshow();
-					 b.show();
+
 					 setVisible(false);
 				}
 				if(cityname == "Hyderabad") {
-					Hyderabad h = new Hyderabad();
-					h.Slideshow();
-					h.show();
+
 					setVisible(false);
 				}
 				if(cityname == "Chennai") {
-					Chennai c = new Chennai();
-					c.Slideshow();
-					c.show();
+
 					setVisible(false);
 				}
 				if(cityname == "Mangalore") {
-					Mangalore m = new Mangalore();
-					m.Slideshow();
-					m.show();
 					setVisible(false);
 				}
 			}

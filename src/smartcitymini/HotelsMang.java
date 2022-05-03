@@ -1,5 +1,7 @@
 package smartcitymini;
 
+
+
 public class HotelsMang  {
 	public HotelsMang() {
 		String text1="Chefs\nAddress: Surathkal, Opp Surathkal Post Office, Mangalore, Karnataka 575019\nPhone:0824 247 7606\nReviews:4 stars";

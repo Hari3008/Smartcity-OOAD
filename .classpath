@@ -6,12 +6,22 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Anusha V/Downloads/AnimatonClass.jar">
+	<classpathentry kind="lib" path="C:/Users/My PC/Downloads/mysql-connector-java-8.0.28.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Anusha V/Downloads/mysql-connector-java-8.0.28.jar">
+	<classpathentry kind="lib" path="C:/Users/My PC/Downloads/OOAD/animation-1.4.3.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/My PC/Downloads/OOAD/AnimatonClass.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/My PC/Downloads/jxplorer.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

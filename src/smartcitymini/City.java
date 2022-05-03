@@ -43,6 +43,7 @@ public class City extends JFrame {
 	private JPanel contentPane;
 	private JButton btnCancel,sb;
     //ListSelector lh;
+	public String role_City;
 	private JTextField txt;
 	private JLabel back;
 	JLabel pic,disp1,disp2,disp3,disp4;
@@ -56,7 +57,7 @@ public class City extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-				   City frame = new City();
+				   City frame = new City("Student");
 					//frame.addlist();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -71,11 +72,7 @@ public class City extends JFrame {
 	 */
 	
 	public String store;
-    Bangalore b=new Bangalore();
-    Chennai c=new Chennai();
-    Mangalore mg=new Mangalore();
-    //Mumbai m=new Mumbai();
-    Hyderabad h = new Hyderabad();
+
 
     private JLabel view;
     public void addlist()
@@ -127,7 +124,7 @@ public class City extends JFrame {
            
              if(store.equals("Bangalore"))
             {
-                b.show();
+//                b.show(role_City);
             }
             else if(store.equals("Chennai"))
             {
@@ -150,7 +147,9 @@ public class City extends JFrame {
 }
 
     private JComboBox comboBox;
-	public City() {
+	public City(String role) {
+		role_City = role;
+		System.out.println(role_City);
 		setTitle("Choose City");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100,100, 1500, 800);
@@ -169,25 +168,30 @@ public class City extends JFrame {
 		disp1.setBounds(10,130,240,150);
 		disp1.setVisible(true);
 		pic.add(disp1);
-		SetImageSize(disp1,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\bang.jpg"));
+		Imageshow is = new Imageshow() {};
+		is.SetImageSizeForCity(disp1, new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\bang.jpg"));
+//		SetImageSize(disp1,new ImageIcon());
 		
 		disp2=new JLabel();
 		disp2.setBounds(290,130,240,150);
 		disp2.setVisible(true);
 		pic.add(disp2);
-		SetImageSize(disp2,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\chennai.jpg"));
+		Imageshow is1 = new Imageshow() {};
+		is1.SetImageSizeForCity(disp2, new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\chennai.jpg"));
 		
 		disp3=new JLabel();
 		disp3.setBounds(570,130,240,150);
 		disp3.setVisible(true);
 		pic.add(disp3);
-		SetImageSize(disp3,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\manglore.jpg"));
+		Imageshow is2 = new Imageshow() {};
+		is.SetImageSizeForCity(disp3, new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\manglore.jpg"));
 		
 		disp4=new JLabel();
 		disp4.setBounds(850,130,240,150);
 		disp4.setVisible(true);
 		pic.add(disp4);
-		SetImageSize(disp4,new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\hyd2.jpg"));
+		Imageshow is3 = new Imageshow() {};
+		is3.SetImageSizeForCity(disp4, new ImageIcon("D:\\SmartCity-Application\\SmartCity\\img\\hyd2.jpg"));
 		
 		
 		String text1="Bangalore, officially known as Bengaluru, is the capital of the Indian state of Karnataka. It has a population of about 8.42 million and a metropolitan population of about 8.52 million, making it the third most populous city and fifth most populous urban agglomeration in India.Located in southern India on the Deccan Plateau, at a height of over 900 m (3,000 ft) above sea level, Bangalore is known for its pleasant climate throughout the year. Its elevation is the highest among the major large cities of India.";
@@ -276,7 +280,7 @@ public class City extends JFrame {
 	    //comboBox.setBackground(Color.red);
 	   
 		//addlist();
-		//SetImageSize(0);
+//		SetImageSize(0);
 		sb.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -287,21 +291,26 @@ public class City extends JFrame {
 	 sb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String selected=(String)comboBox.getSelectedItem();
+				setVisible(false);
 				if(selected.equals("Bangalore"))
 				{
+				    Bangalore b=new Bangalore(role_City);
+				    
+
 					b.show();
 				}	
 				else if(selected.equals("Chennai"))
 				{
+					Chennai c=new Chennai(role_City);
 					c.show();
 				}
-				else if(selected.equals("Mumbai")){
-					//m.show();
-				}
 				else if (selected.equals("Mangalore")){
+					Mangalore mg=new Mangalore(role_City);
+
 					mg.show();
 				}
 				else if(selected.equals("Hyderabad")){
+				    Hyderabad h = new Hyderabad(role_City);
 					h.show();
 				}
 			}
@@ -345,26 +354,26 @@ public class City extends JFrame {
 	
 	}
 	
-	public void SetImageSize()
-	{
-		ImageIcon icon=new ImageIcon("C:\\Users\\Prajwala\\Desktop\\java\\a-images for smartcity\\bg13.jpg");
-		Image img=icon.getImage();
-		Image newImg=img.getScaledInstance(back.getWidth(), back.getHeight(), Image.SCALE_SMOOTH);
-		//Image newImg=img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
-		ImageIcon newImc=new ImageIcon(newImg);
-		back.setIcon(newImc);
-		
-	}
-	public void SetImageSize(JLabel label,ImageIcon im)
-	{
-		ImageIcon icon=im;
-		Image img=icon.getImage();
-		Image newImg=img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
-		//Image newImg=img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
-		ImageIcon newImc=new ImageIcon(newImg);
-		label.setIcon(newImc);
-		
-	}
+//	public void SetImageSize()
+//	{
+//		ImageIcon icon=new ImageIcon("C:\\Users\\Prajwala\\Desktop\\java\\a-images for smartcity\\bg13.jpg");
+//		Image img=icon.getImage();
+//		Image newImg=img.getScaledInstance(back.getWidth(), back.getHeight(), Image.SCALE_SMOOTH);
+//		//Image newImg=img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+//		ImageIcon newImc=new ImageIcon(newImg);
+//		back.setIcon(newImc);
+//		
+//	}
+//	public void SetImageSize(JLabel label,ImageIcon im)
+//	{
+//		ImageIcon icon=im;
+//		Image img=icon.getImage();
+//		Image newImg=img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+//		//Image newImg=img.getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+//		ImageIcon newImc=new ImageIcon(newImg);
+//		label.setIcon(newImc);
+//		
+//	}
 	
 	
 }

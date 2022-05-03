@@ -2,7 +2,9 @@ package smartcitymini;
 
 public class Roles {
 	Roles(String Name, String Username, String Password,String HomeTown, String Role ){
-		if(Role == "Job Seeker"){
+		
+
+		if(Role == "JobSeeker"){
 			JobSeeker jb = new JobSeeker(Name, Username, Password, HomeTown);
 		}
 		if(Role == "Student"){

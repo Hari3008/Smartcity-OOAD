@@ -110,6 +110,7 @@ public class Welcome extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				Signup s = new Signup();
 				s.show();
+				setVisible(false);
 			}
 		});
 		btnLogin.addMouseListener(new MouseAdapter() {
@@ -123,6 +124,7 @@ public class Welcome extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				login l = new login();
 				l.show();
+				setVisible(false);
 			}
 		});
 	}

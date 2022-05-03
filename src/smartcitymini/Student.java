@@ -8,6 +8,7 @@ public class Student {
 	try {
 		Connection connect=null;
 		connect=DbConnect.dataConnector();
+
 		String query = "INSERT INTO STUDENT(Name, Username, Password, HomeTown) VALUES (?,?,?,?)";
 		PreparedStatement pst=connect.prepareStatement(query);
 		

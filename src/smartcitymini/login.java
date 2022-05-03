@@ -15,7 +15,11 @@ public class login extends JFrame {
 	private JPanel contentPane;
 	private JTextField usernametext;
 	private JTextField passwordtext;
+	private JComboBox comboBox;
 	Connection connect=null;
+	String[] roles={
+			"JobSeeker","Student","Tourist"
+	};
 
 	/**
 	 * Launch the application.
@@ -32,13 +36,15 @@ public class login extends JFrame {
 			}
 		});
 	}
-
+	private static DbConnect db;
 	/**
 	 * Create the frame.
 	 */
 	public login() {
 		setTitle("Login");
-		DbConnect db=new DbConnect();
+		if(db==null) {
+			DbConnect db=new DbConnect();
+		}
 		connect=db.dataConnector();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1500,800);
@@ -63,6 +69,12 @@ public class login extends JFrame {
 		Passwordlabel.setForeground(Color.WHITE);
 		Passwordlabel.setBounds(454, 617, 63, 14);
 		
+		JLabel Role = new JLabel("Role");
+		background.add(Role);
+		Role.setForeground(Color.WHITE);
+		Role.setBounds(454, 657, 63, 14);
+		
+		
 		JButton btnLogin = new JButton("Login");
 		background.add(btnLogin);
 		background.setForeground(Color.BLACK);
@@ -79,6 +91,18 @@ public class login extends JFrame {
 		passwordtext.setBounds(561, 617, 86, 20);
 		passwordtext.setColumns(10);
 		
+		comboBox = new JComboBox();
+	    //comboBox.setPreferredSize(new Dimension(200,130));
+	    comboBox.setBounds(561, 670, 86, 20);
+	    //comboBox.setBounds(getBounds());
+//		view.setBounds(575, 450, 200, 40);
+//	    view.setVisible(true);
+	    int count=0;
+	    for(int i = 0; i < roles.length; i++) 
+	    	comboBox.addItem(roles[count++]); 
+		background.add(comboBox);
+		comboBox.setVisible(true);
+		
 		JLabel lblPleaseLogin = new JLabel("Please login");
 		background.add(lblPleaseLogin);
 		lblPleaseLogin.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -87,10 +111,14 @@ public class login extends JFrame {
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				String role=(String)comboBox.getSelectedItem();
 				try
 				{
-					String query="select Username,Password from Details where Username=? and Password=?";
+					
+					
+					String query="select Username,Password from "+role + " where Username=? and Password=?";
 					PreparedStatement pst=connect.prepareStatement(query);
+//					pst.setString(1, role);
 					pst.setString(1, usernametext.getText());
 					pst.setString(2, passwordtext.getText());
 					//String n=usernametext.getText();
@@ -109,17 +137,23 @@ public class login extends JFrame {
 //						c.show();
 						//after_login a=new after_login(n);
 						//a.setVisible(true);
+						City c = new City(role);
+						c.show();				
+						setVisible(false);
 					}
 					else
 						JOptionPane.showMessageDialog(null,"Wrong Username/Password");
 					rs.close();
 					pst.close();
+					
 					}
+					
 				catch(Exception f)
-				{
+				{	
 					JOptionPane.showMessageDialog(null, f);
 					
 				}
+
 
 			}
 		});

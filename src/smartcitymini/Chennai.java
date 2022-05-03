@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 //import com.teamdev.jxbrowser.chromium.Browser;
 //import com.teamdev.jxbrowser.chromium.BrowserFactory;
 import javax.swing.JPanel;
@@ -28,6 +29,7 @@ public class Chennai extends JFrame {
 	AnimationClass AC=new AnimationClass();
 	static JScrollPane scroll ;
 	JLabel bslide1,bslide2;
+	public String role;
 	/**
 	 * Launch the application.
 	 */
@@ -35,7 +37,7 @@ public class Chennai extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Chennai frame = new Chennai();
+					Chennai frame = new Chennai("Tourist");
 					frame.setVisible(true);
 					frame.Slideshow();
 					//frame.getContentPane().add(scroll);
@@ -51,7 +53,8 @@ public class Chennai extends JFrame {
 	 */
 	JLabel back ;
 	//private JLabel lblNewLabel;
-	public Chennai() {
+	public Chennai(String role_Chennai) {
+		role = role_Chennai;
 		setTitle("");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1500, 800);
@@ -92,45 +95,124 @@ public class Chennai extends JFrame {
          back.add(bslide2);
        
         
-        JButton Tourism = new JButton("Tourism");
-        back.add(Tourism);
-        Tourism.setBackground(Color.WHITE);
-        Tourism.setBounds(934, 20, 89, 23);
         
         JButton Education = new JButton("Education");
         back.add(Education);
         Education.setBackground(Color.WHITE);
-        Education.setBounds(1020, 20, 100, 23);
+        Education.setBounds(1070, 20, 100, 23);
         
         /*JButton Business = new JButton("Business");
         back.add(Business);
         Business.setBackground(Color.WHITE);
         Business.setBounds(1113, 20, 100, 23);*/
         
-       JButton General = new JButton("Map");
-        back.add(General);
-        General.setBackground(Color.WHITE);
-        General.setBounds(1113, 20, 100, 23);
+       JButton Map = new JButton("Map");
+        back.add(Map);
+        Map.setBackground(Color.WHITE);
+        Map.setBounds(1283, 20, 100, 23);
       
-        General.addActionListener(new ActionListener() {
+//        General.addActionListener(new ActionListener() {
+//        	public void actionPerformed(ActionEvent arg0) {
+//        		/* Browser browser = BrowserFactory.create();
+//        	        JFrame frame = new JFrame("JxBrowser Google Maps");
+//        	        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        	        frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
+//        	        frame.setSize(700, 500);
+//        	        frame.setLocationRelativeTo(null);
+//        	        frame.setVisible(true);
+//        	        browser.loadURL("http://maps.google.com");*/
+//        	}
+//        });
+//      
+//        Education.addMouseListener(new MouseAdapter() {
+//        	@Override
+//        	public void mouseClicked(MouseEvent e) {
+//        		EducationChennai t=new EducationChennai(); 
+//                t.show();
+//        	}
+//        });
+//        Education.addActionListener(new ActionListener() {
+//        	public void actionPerformed(ActionEvent arg0) {
+//        	}
+//        });
+        JButton Tourism = new JButton("Places to Visit");
+        back.add(Tourism);
+        Tourism.setBackground(Color.WHITE);
+        Tourism.setBounds(934, 20, 150, 23);
+        
+        JButton Lodging = new JButton("Lodging");
+        back.add(Lodging);
+        Lodging.setBackground(Color.WHITE);	
+        Lodging.setBounds(750, 20, 100, 23);
+        
+        JButton Business = new JButton("Jobs");
+        back.add(Business);
+        Business.setBackground(Color.WHITE);
+        Business.setBounds(840, 20, 100, 23);
+        
+        JButton Hotel = new JButton("Restaurants");
+        back.add(Hotel);
+        Hotel.setBackground(Color.WHITE);
+        Hotel.setBounds(1163, 20, 120, 23);
+        Map.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		/* Browser browser = BrowserFactory.create();
-        	        JFrame frame = new JFrame("JxBrowser Google Maps");
-        	        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        	        frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
-        	        frame.setSize(700, 500);
-        	        frame.setLocationRelativeTo(null);
-        	        frame.setVisible(true);
-        	        browser.loadURL("http://maps.google.com");*/
+//        		 Browser browser = BrowserFactory.create();
+//        	        JFrame frame = new JFrame("JxBrowser Google Maps");
+//        	        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        	        frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
+//        	        frame.setSize(700, 500);
+//        	        frame.setLocationRelativeTo(null);
+//        	        frame.setVisible(true);
+//        	        browser.loadURL("http://maps.google.com");
+        			
+        			MapChennai m = new MapChennai();
+        	}
+        });
+        
+        
+        Lodging.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		if(role=="Tourist" || role=="JobSeeker") {
+        		BLChennai bl = new BLChennai();
+        		}
+        		else {
+        			JOptionPane.showMessageDialog(null,"No access for Students");
+        		}
+        		
+        	}
+        });
+        Business.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		if(role=="JobSeeker") {
+        		JobsChennai j = new JobsChennai();
+        		}
+        		else {
+        			JOptionPane.showMessageDialog(null,"No access for Non-JobSeekers");
+        		}
+        	}
+        });
+        Hotel.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		if(role=="Tourist"){
+        		HotelsChennai h = new HotelsChennai();
+        		}
+        		else {
+        			JOptionPane.showMessageDialog(null,"No access for Non-Tourists");
+        		}
         	}
         });
       
         Education.addMouseListener(new MouseAdapter() {
         	@Override
         	public void mouseClicked(MouseEvent e) {
+        		if(role=="Student"){
         		EducationChennai t=new EducationChennai(); 
-                t.show();
+        		}
+        		else {
+        			JOptionPane.showMessageDialog(null,"No access for Non-Students");
+        		}
         	}
+        	
         });
         Education.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
@@ -142,18 +224,32 @@ public class Chennai extends JFrame {
         	public void mouseClicked(MouseEvent e) {
         		//TourismBlore t=new TourismBlore(); 
                 //t.show();
-        		FrameDisplayChennai t=new FrameDisplayChennai(); 
+//        		System.out.println(role_Banglore);
+                if(role=="Tourist") {
+  
+                	PlacesChennai t=new PlacesChennai(); 
+                }
+                else {
+					JOptionPane.showMessageDialog(null,"No access for Non-Tourists");
+                }
+        		
         	}
         });
         Tourism.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         	}
         });
+        
+        
+        
          bslide1.setVisible(true);
          bslide2.setVisible(true);
 	     //JPanel text = new JPanel();x
 		// String all = new Scanner(new File("textExample.txt")).useDelimiter("\\A").next(); 
-	     SetImageSize();
+//	     SetImageSize();
+         Imageshow is = new Imageshow() {};
+         
+         is.SetImageSizeCity(back);
 
 	}
 	

@@ -10,7 +10,7 @@ public class PlacesMangalore {
 		String im2 = ".//img//Mangalore//panambur.jpg";
 
 		String p3="The Mangaladevi Temple is a Hindu temple at Bolara in the city of Mangaluru in the South Indian state of Karnataka, situated about three km southwest of the city centre. The temple is dedicated to Hindu god Shakti in the form of Mangaladevi. The city of Mangaluru is named after the presiding deity, Mangaladevi. The temple is of significant antiquity and is believed to have been built during the 9th century by Kundavarman, the most famous king of the Ahepa dynasty during the 9th century under the aegies of Matsyendranath. As per another legend, the temple is believed to have been built by Parashurama, one of the ten avatars of Hindu god Vishnu and later expanded by Kundavarman.";
-		String im3 = ".//img//Mangalore//Mangaladevi.jpg";
+		String im3 = ".//img//Mangalore//Mangaladevi.jpeg";
 		
 		String p4="Kudroli,earlier Known as Kudre-halli where Tippu Sultan, the great ruler of mysore, army used to have Horses stables and grazing land, ,is one of the oldest and well-known localities of Mangalore City located on the Western Coastal belt of Karnataka , India . Since it is the oldest locality pre-dominated by Muslim inhabitants it has become an Islamic learning center of the city which also hosts various religious functions and the festivities. It is also a historic place as the great ruler , Sher-e-Mysore, Tippu Sultan has his fort just a couple of kilometers away known as Sultan Battery. Kudroli is also famous for Gokarnatheshwara Temple. ";
 		String im4 = ".//img//Mangalore//kudroli.jpg";

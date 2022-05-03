@@ -16,12 +16,12 @@ public class HotelsHyd  {
 		
 		String text6="Marriott\nName: Marriott\nFood type: Nonveg and veg and chineese\nBranches: Hitech city\nReview: 5 stars";
 		
-		String img1 = ".//img//Hyderabad//hotel//Minerva.jpeg";
-		String img2 = ".//img//Hyderabad//hotel//Ohri's.jpeg";
-		String img3 = ".//img//Hyderabad//hotel//Bawarchi.jpeg";
-		String img4 = ".//img//Hyderabad//hotel//Tabla.jpeg";
-		String img5 = ".//img//Hyderabad//hotel//Paradise.jpeg";
-		String img6 = ".//img//Hyderabad//hotel//Marriott.jpeg";
+		String img1 = ".//img//Hyderabad//hotels//Minerva.jpeg";
+		String img2 = ".//img//Hyderabad//hotels//Ohri's.jpeg";
+		String img3 = ".//img//Hyderabad//hotels//Bawarchi.jpeg";
+		String img4 = ".//img//Hyderabad//hotels//Tabla.jpeg";
+		String img5 = ".//img//Hyderabad//hotels//Paradise.jpeg";
+		String img6 = ".//img//Hyderabad//hotels//Marriott.jpeg";
 		
 		String cityname = "Hyderabad";
 		
